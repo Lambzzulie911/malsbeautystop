@@ -1,0 +1,236 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(232, 160, 229);
+    color: antiquewhite;
+
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgb(182, 108, 163);
+    margin: 4px;
+}
+
+.logo h1{
+    font-size: 1.8rem;
+    color: #ecf0f1;
+    border-radius: 40px;
+}
+
+.navbar {
+    text-align: center;
+}
+.navbar ul{
+            display: flex;
+            list-style: none;
+
+}
+
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: underline;
+    color: #ecf0f1;
+    font-size: 1rem;
+    transition: color 0.36;
+    padding: 6px;
+}
+
+.navbar a:hover{
+    color: #f1e9dc;
+    text-decoration: underline;
+}
+
+
+.navbar a:hover{
+   background-color: rgb(108, 43, 86);
+   border-radius: 100px;
+  
+  
+}
+
+
+.active{
+   background-color: rgb(94, 22, 70);
+   transition: 6s;
+   border-radius: 100px;
+   
+}
+
+.image-logo img{
+    display: flex;
+    width: 10%;
+    border-radius: 1000px;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 15px 15px 15px;
+    overflow: hidden;
+    border-radius: 500%;
+    border: 10px;
+}
+
+.body-image{
+    display: flex;
+    border-radius: 50%;
+    border: 10px;
+}
+
+
+.p{
+    display: flex;
+    text-align: center;
+    padding: 0px;
+    margin: 2px;
+}
+
+.team-members{
+    display: flex;
+}
+
+h1{
+    text-align: center;
+}
+
+.left{
+    display: block;
+    margin-left: -0.1%;
+    margin-right: -0.1%;
+    width: 50%;
+}
+
+.right{
+    display: block;
+    margin-left: -0.1%;
+    margin-right: -0.1%;
+    width: 50%;
+    padding-left: 20%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    border-style: 10px;
+    
+}
+
+.tagline{
+    margin-left: 10px;
+}
+
+
+.main{
+    vertical-align: middle;
+}
+
+form{
+    padding: 10x;
+    text-align: center;
+    margin: 10px;
+    background: rgb(168, 84, 168);
+    max-width: 600px;;
+    box-shadow: 0 0 10px rgba(0 0 0 0.3);
+    border-radius: 6px;
+}
+
+form label{
+    font-weight: bold;
+}
+
+ form input, select, textarea{
+    padding: 10px;
+    margin: 10px, 0, 25px;
+    border-radius: 4px;
+    border: 2px solid #ccc;
+    width: 95%;
+}
+form button{
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    padding: 10px, 20px;
+}
+
+
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #e8a0e5;
+    color: #fff;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #b66ca3;
+    padding: 15px 20px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a.active {
+    background-color: #6c2b58;
+  }
+  
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.3s;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #b66ca3;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      padding: 10px 0;
+      text-align: center;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+  
