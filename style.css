@@ -233,4 +233,37 @@ body {
       display: flex;
     }
   }
-  
+/* Mobile Nav Styles */
+.mobile-nav {
+  display: none;
+}
+
+.menu-toggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.mobile-menu a {
+  padding: 8px 0;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+/* Show only on small screens */
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: block;
+  }
+}
