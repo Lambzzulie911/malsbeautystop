@@ -233,7 +233,7 @@ body {
       display: flex;
     }
   }
-/* Mobile Nav Styles */
+
 .mobile-nav {
   display: none;
 }
@@ -261,7 +261,7 @@ body {
   border-bottom: 1px solid #eee;
 }
 
-/* Show only on small screens */
+
 @media (max-width: 768px) {
   .mobile-nav {
     display: block;
