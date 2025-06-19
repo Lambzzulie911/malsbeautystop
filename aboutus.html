@@ -1,86 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title><P style="font-family: Georgia, 'Times New Roman', Times, serif;">About Us | MAL'S BEAUTY STOP</P></title>
-        <link rel="stylesheet" href="style.css">
-        <style>
-            .team  img{
-                text-align: center;
-            }
-            .team{
-                text-align: left;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <div class="logo-container">
-                <img src="logo/new logo3.png"  alt="logo" style="width: 150PX;">
-            <br>
-                <P style="font-family: 'Brush Script MT', cursive;"  p class="tagline">  <h1> MAL'S  BEAUTY STOP</h1></P>
-                
-                
-            </div>
-           
-            <nav class="navbar">
-                <ul>
+<head>
+  <meta charset="UTF-8" />
+ 
+<meta name="description" content="Explore Mal's Beauty Stop – premium beauty services and products. Book appointments, contact us, or make an enquiry today.">
+<meta name="keywords" content="Beauty, Salon, Skincare, Haircare, Mal's Beauty Stop">
+<meta name="author" content="Mal's Beauty Stop">
 
 
-               <li>  <a href="index.html" > HOME</a> </li>
-                <li><a class="active" href="aboutus.html">ABOUT US</a></li>
-               <li> <a href="service.html">SERVICES</a> </li>
-             <li>   <a href="enquiry.html">ENQUIRY</a></li>
-              <li> <a href="contactus.html">CONTACT US</a></li>
-                </ul>
-            </nav>
-        </header>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <main>
-            <P style="font-family: Georgia, 'Times New Roman', Times, serif;">  <h2>&#128133;OUR GLAMOURS STORY&#128133;</h2></P>
-            <P>Mal's Beauty Stop's slay started in 2021 when a group of young models wanted other inspired girlies to feel comfortable with their own skin , with or without a facebeat.
-                Together they campaigned the benefits of being comfortable with who you are and soon inspired more angels.
-            <br>
-            What started off as a small confidence booster soon became an inspiration to many.
-        </P>
-        <p> Today Mal's Beauty Stop has multiple branches across South Africa and will soon have more international branches.
-            <br>
-            Mal's has partnered with various beauty brands and is working on getting more 
-            partnerships with many more brands including clothing brands.
-        </p>
-        <P style="font-family: Georgia, 'Times New Roman', Times, serif;"> <h3>&#x2728;OUR GOAL&#x2728;</h3></P>
-        <p>Our target is to build personal confidence amongst our fellow girlies. As well as building the self love mentality in our 
-            girlies' minds, that they should be self aware and know that you don't have to feel cute only for occations.
-        </p>
-        <P style="font-family: Georgia, 'Times New Roman', Times, serif;"> <h3>&#128124;OUR ANGELS&#128124;</h3></P>
-        <div class="team members">
-            <img src="team members/lambz.jpg" alt="Malamba Rewards Ramaano" style="width: 150px;">
-            <p><strong>Malamba Rewards Ramaano</strong><br>Founder & Director Of Mal's</p>
-        </div>
-         
-        <div class="team members">
-            <img src="team members/lufuno.jpg" alt="Lufuno Marubini Ramasuvha" style="width: 150px;">
-            <p><strong>Lufuno Marubini Ramasuvha</strong><br>Manager & Marketer</p>
-        </div>
 
-        <div class="team members">
-            <img src="team members/ouma.jpg" alt="Ouma priscilla Tlou" style="width: 150px;">
-            <p><strong>Ouma priscilla Tlou</strong><br>Our Special Artist</p>
-        </div>
+  <title>About Us | MAL'S BEAUTY STOP</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .team {
+      text-align: center;
+      margin: 20px auto;
+      max-width: 250px;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      cursor: pointer;
+      user-select: none;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .team img {
+      width: 150px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 10px;
+      transition: transform 0.3s ease;
+    }
+    .team:focus,
+    .team:hover {
+      outline: none;
+      box-shadow: 0 8px 15px rgba(255, 105, 180, 0.7);
+      transform: translateY(-5px);
+    }
+    .team:focus img,
+    .team:hover img {
+      transform: scale(1.05);
+    }
+    .bio {
+      max-height: 0;
+      overflow: hidden;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: #444;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding: 0 10px;
+    }
+    .bio.open {
+      max-height: 150px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="logo/new logo3.png" alt="logo" style="width: 150px;" /><br />
+      <h1 style="font-family: 'Brush Script MT', cursive;">MAL'S BEAUTY STOP</h1>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a class="active" href="aboutus.html">ABOUT US</a></li>
+        <li><a href="service.html">SERVICES</a></li>
+        <li><a href="enquiry.html">ENQUIRY</a></li>
+        <li><a href="contactus.html">CONTACT US</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <div class="team members">
-            <img src="team members/Tshavhu.jpg" alt="Tshavhungwe Rinae Balaphala" style="width: 150px;">
-            <p><strong>Tshavhungwe Rinae Balaphala</strong><br>Our Special Artist</p>
-        </div>
-        
-        <div class="team members">
-            <img src="team members/mpho.jpg" alt="Mpho Dombo" style="width: 150px;">
-            <p><strong>Mpho Dombo</strong><br>Our Model</p>
-        </div>
-        </main>
-        
-        <footer>
-            <p>&copy; 2022 Mal's Beauty Stop , All Rights Reserved.</p> 
-        </footer>
-    </body>
+  <main>
+    <h2>&#128133;OUR GLAMOURS STORY&#128133;</h2>
+    <p>
+      Mal's Beauty Stop's slay started in 2021 when a group of young models wanted other inspired
+      girlies to feel comfortable with their own skin, with or without a facebeat.
+      Together they campaigned the benefits of being comfortable with who you are and soon inspired
+      more angels.
+      <br />
+      What started off as a small confidence booster soon became an inspiration to many.
+    </p>
+    <p>
+      Today Mal's Beauty Stop has multiple branches across South Africa and will soon have more
+      international branches.
+      <br />
+      Mal's has partnered with various beauty brands and is working on getting more partnerships with
+      many more brands including clothing brands.
+    </p>
+
+    <h3>&#x2728;OUR GOAL&#x2728;</h3>
+    <p>
+      Our target is to build personal confidence amongst our fellow girlies. As well as building the self
+      love mentality in our girlies' minds, that they should be self aware and know that you don't have to
+      feel cute only for occasions.
+    </p>
+
+    <h3>&#128124;OUR ANGELS&#128124;</h3>
+
+    <div tabindex="0" class="team members" aria-expanded="false" role="button" aria-controls="bio1" id="member1">
+      <img src="team members/lambz.jpg" alt="Malamba Rewards Ramaano" />
+      <p><strong>Malamba Rewards Ramaano</strong><br />Founder & Director Of Mal's</p>
+      <div class="bio" id="bio1">
+        Malamba founded Mal's Beauty Stop to inspire confidence and empower young women through beauty.
+      </div>
+    </div>
+
+    <div tabindex="0" class="team members" aria-expanded="false" role="button" aria-controls="bio2" id="member2">
+      <img src="team members/lufuno.jpg" alt="Lufuno Marubini Ramasuvha" />
+      <p><strong>Lufuno Marubini Ramasuvha</strong><br />Manager & Marketer</p>
+      <div class="bio" id="bio2">
+        Lufuno manages marketing campaigns and builds brand awareness across South Africa.
+      </div>
+    </div>
+
+    <div tabindex="0" class="team members" aria-expanded="false" role="button" aria-controls="bio3" id="member3">
+      <img src="team members/ouma.jpg" alt="Ouma Priscilla Tlou" />
+      <p><strong>Ouma Priscilla Tlou</strong><br />Our Special Artist</p>
+      <div class="bio" id="bio3">
+        Ouma creates stunning artistic makeup looks that empower confidence.
+      </div>
+    </div>
+
+    <div tabindex="0" class="team members" aria-expanded="false" role="button" aria-controls="bio4" id="member4">
+      <img src="team members/Tshavhu.jpg" alt="Tshavhungwe Rinae Balaphala" />
+      <p><strong>Tshavhungwe Rinae Balaphala</strong><br />Our Special Artist</p>
+      <div class="bio" id="bio4">
+        Tshavhungwe specializes in editorial and bridal makeup.
+      </div>
+    </div>
+
+    <div tabindex="0" class="team members" aria-expanded="false" role="button" aria-controls="bio5" id="member5">
+      <img src="team members/mpho.jpg" alt="Mpho Dombo" />
+      <p><strong>Mpho Dombo</strong><br />Our Model</p>
+      <div class="bio" id="bio5">
+        Mpho is the face of Mal’s Beauty Stop in campaigns and runway shows.
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2022 Mal's Beauty Stop, All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    (() => {
+      const DEBUG = false;
+    
+      function debounce(func, wait) {
+        let timeout;
+        return function () {
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(this, arguments), wait);
+        };
+      }
+
+     
+      const teamMembers = document.querySelectorAll('.team');
+      teamMembers.forEach((member, i) => {
+        setTimeout(() => {
+          member.style.opacity = '1';
+          member.style.transform = 'translateY(0)';
+        }, i * 150);
+      });
+
+     
+      teamMembers.forEach(member => {
+        const bioId = member.getAttribute('aria-controls');
+        const bio = document.getElementById(bioId);
+
+        function toggleBio() {
+          const expanded = member.getAttribute('aria-expanded') === 'true';
+          member.setAttribute('aria-expanded', String(!expanded));
+          if (!expanded) {
+            bio.classList.add('open');
+            bio.style.maxHeight = bio.scrollHeight + 'px';
+          } else {
+            bio.classList.remove('open');
+            bio.style.maxHeight = null;
+          }
+        }
+
+        member.addEventListener('click', toggleBio);
+        member.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleBio();
+          }
+        });
+      });
+
+      
+      window.addEventListener(
+        'resize',
+        debounce(() => {
+          if (DEBUG) console.log('Window resized:', window.innerWidth, window.innerHeight);
+        }, 300)
+      );
+
+      if (DEBUG) console.log("Mal's Beauty Stop About Us page loaded.");
+    })();
+  </script>
+</body>
 </html>

@@ -1,79 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-     <title><P style="font-family: Georgia, 'Times New Roman', Times, serif;">Enquiry   | MAL'S BEAUTY STOP</P></title>
-     <link rel="stylesheet" href="style.css">
-
-        <style>
-            .team  img{
-                text-align: center;
-            }
-            
-        </style>
-    </head>
-    <body>
-
-        <header>
-            <div class="logo-container">
+<head>
+  <meta charset="UTF-8">
+ 
+<meta name="description" content="Explore Mal's Beauty Stop – premium beauty services and products. Book appointments, contact us, or make an enquiry today.">
+<meta name="keywords" content="Beauty, Salon, Skincare, Haircare, Mal's Beauty Stop">
+<meta name="author" content="Mal's Beauty Stop">
 
 
-                <img src="logo/new logo3.png" alt="logo" style="width: 150PX;">
-                <br>
-                <P style="font-family: Georgia, 'Times New Roman', Times, serif;" p class="tagline"><h1>MAL'S BEAUTY STOP</h1></P>
-            </div>
-           
-            <nav class="navbar">
-                
-                <ul>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-                    <li> <a href="index.html" > HOME</a> </li>
-                    <li><a href="aboutus.html">ABOUT US</a></li>
-                     <li> <a href="service.html">SERVICES</a> </li>
-                    <li>   <a class="active"href="enquiry.html">ENQUIRY</a></li>
-                    <li> <a href="contactus.html">CONTACT US</a></li>
-                </ul>
 
-             </nav>
-           
-        </header>
-<P><H2>ENQUIRE HERE:</H2><P>
-     <form>
+  <title>Enquiry | MAL'S BEAUTY STOP</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .team img {
+      text-align: center;
+    }
+    form {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color:#eab8c8 ;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    form label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    form input, form select, form textarea, form button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #cc7dba;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    form button {
+      background-color: #cc3366;
+      color: #eddfe4;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form button:hover {
+      background-color: #b32d5a;
+    }
+    .success-message {
+      text-align: center;
+      color: green;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
 
-        <label for="name"> NAME</label>
-        <input type="text" id="fullname" name="fullname">
+<header>
+  <div class="logo-container">
+    <img src="logo/new logo3.png" alt="logo" style="width: 150px;"><br>
+  <h1 style="font-family: 'Brush Script MT', cursive;">MAL'S BEAUTY STOP</h1>
+  </div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="aboutus.html">ABOUT US</a></li>
+      <li><a href="service.html">SERVICES</a></li>
+      <li><a class="active" href="enquiry.html">ENQUIRY</a></li>
+      <li><a href="contactus.html">CONTACT US</a></li>
+    </ul>
+  </nav>
+</header>
 
-        <label for="surname"> surname</label>
-        <input type="text" name="" id="">
+<main>
+  <h2 style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">ENQUIRE HERE:</h2>
+  <form id="enquiryForm">
+    <label for="fullname">NAME</label>
+    <input type="text" id="fullname" name="fullname" required>
 
-        <label for="email">EMAIL ADDRESS</label>
-        <input type="email" id="email">
-        
-        <label for="tel"> Contact</label>
-        <input type="tel" name="tel" id="tel">
+    <label for="surname">SURNAME</label>
+    <input type="text" id="surname" name="surname" required>
 
-        <label for="selct">Select Option</label>
-        <select id="role" name="role">
-            <option value="select"> --Select--</option>
-            <option value="buying">BUYING OUR PRODUCTS</option>
-            <option value="skintype">KNOWING PRODUCTS THAT COMPLEMENT YOUR SKIN</option>
-            <option value="model">BEING ONE OF OUR MODELS</option>
-            <option value="review">PRODUCT REVIEW</option>
-            <option value="useage">STEP BY STEP TUT ON HOW TO USE CERTIAN PRODUCTS</option>
-            <option value="appointment">BOOKING AN APPOINTMENT</option>
-            <option value="sponsor">BECOMING A SPONSOR</option>
-        </select>
-        <label for="message">Additional Message</label>
-        <textarea name="message" id="message"  row="8" placeholder="Enter Message"></textarea>
-        <button>Submit</button>
+    <label for="email">EMAIL ADDRESS</label>
+    <input type="email" id="email" name="email" required>
 
-     </form>
+    <label for="tel">CONTACT</label>
+    <input type="tel" id="tel" name="tel" required pattern="[0-9+\-\s]{7,}">
+
+    <label for="role">SELECT OPTION</label>
+    <select id="role" name="role" required>
+      <option value="">--Select--</option>
+      <option value="buying">BUYING OUR PRODUCTS</option>
+      <option value="skintype">KNOWING PRODUCTS THAT COMPLEMENT YOUR SKIN</option>
+      <option value="model">BEING ONE OF OUR MODELS</option>
+      <option value="review">PRODUCT REVIEW</option>
+      <option value="usage">STEP BY STEP TUT ON HOW TO USE CERTAIN PRODUCTS</option>
+      <option value="appointment">BOOKING AN APPOINTMENT</option>
+      <option value="sponsor">BECOMING A SPONSOR</option>
+    </select>
+
+    <label for="message">ADDITIONAL MESSAGE</label>
+    <textarea id="message" name="message" rows="5" placeholder="Enter Message"></textarea>
+
+    <button type="submit">Submit</button>
+    <p class="success-message" id="successMsg"></p>
+  </form>
+</main>
+
+<footer>
+  <p>&copy; 2022 Mal's Beauty Stop, All Rights Reserved.</p>
+</footer>
+
+<script>
+  document.getElementById("enquiryForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const fullname = document.getElementById("fullname").value.trim();
+    const surname = document.getElementById("surname").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const tel = document.getElementById("tel").value.trim();
+    const role = document.getElementById("role").value;
+    const message = document.getElementById("message").value.trim();
+    const successMsg = document.getElementById("successMsg");
+
+    if (!fullname || !surname || !email || !tel || !role) {
+      alert("⚠️ Please fill in all required fields.");
+      return;
+    }
+
     
-     <footer>
-        <p>&copy; 2022 Mal's Beauty Stop , All Rights Reserved.</p>  
-    </footer>
+    const telPattern = /^[0-9+\-\s]{7,}$/;
+    if (!telPattern.test(tel)) {
+      alert("📞 Please enter a valid contact number.");
+      return;
+    }
 
-   
+    successMsg.textContent = `✅ Thank you, ${fullname}! We’ve received your enquiry. We'll get back to you shortly.`;
+
+    this.reset();
+
+  
+    setTimeout(() => {
+      successMsg.textContent = "";
+    }, 5000);
+  });
+</script>
+
 </body>
 </html>
