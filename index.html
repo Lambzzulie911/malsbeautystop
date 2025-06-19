@@ -1,67 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title><P style="font-family: Georgia, 'Times New Roman', Times, serif;">Home | MAL'S BEAUTY STOP</P></title>
-        <link rel="stylesheet" href="style.css">
-    
+<head>
+  <meta charset="UTF-8" />
+  <title>Home | MAL'S BEAUTY STOP</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .team img {
+      text-align: center;
+    }
+    .team {
+      text-align: left;
+    }
 
-        <style>
-            .team  img{
-                text-align: center;
-            }
-            .team{
-                text-align: left;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-         
-            <div class="logo-container">
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
+    /* Button pulse */
+    #embarkBtn {
+      transition: transform 0.3s ease;
+      background-color: #ff69b4;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+    #embarkBtn:hover,
+    #embarkBtn:focus {
+      animation: pulse 1.5s infinite;
+      outline: none;
+      cursor: pointer;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 182, 193, 0.7);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px 10px rgba(255, 182, 193, 0);
+      }
+    }
 
-             <img src="logo/new logo3.png" alt="logo" style="width: 150PX;">
-             <br>
-             <P style="font-family: Georgia, 'Times New Roman', Times, serif;" p class="tagline"><h1>MAL'S BEAUTY STOP</h1></P>
-        </div>
+    /* Toast message */
+    #toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ffb6c1;
+      color: #333;
+      padding: 12px 24px;
+      border-radius: 25px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      z-index: 1000;
+    }
+    #toast.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="logo/new logo3.png" alt="logo" style="width: 150px" /><br />
+     <h1 style="font-family: 'Brush Script MT', cursive;">MAL'S BEAUTY STOP</h1>
+    </div>
 
-        <nav class="navbar">
-            <ul>
-                 
-           <li><a class="active"href="index.html" > HOME</a> </li>
-            <li><a href="aboutus.html">ABOUT US</a></li>
-           <li> <a href="service.html">SERVICES</a> </li>
-         <li>   <a href="enquiry.html">ENQUIRY</a></li>
-          <li> <a href="contactus.html">CONTACT US</a></li>
-            </ul>
-        </nav>
-        </header>
+    <nav class="navbar">
+      <ul>
+        <li><a class="active" href="index.html">HOME</a></li>
+        <li><a href="aboutus.html">ABOUT US</a></li>
+        <li><a href="service.html">SERVICES</a></li>
+        <li><a href="enquiry.html">ENQUIRY</a></li>
+        <li><a href="contactus.html">CONTACT US</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <section class="beauty chevlier">
-            <div class="images">
-            <img src="images/make up hero.jpg" alt="Mal's Beauty Stop chevlier" style="width: 300px;"> </div>
-            <div class="chevlier-text">
-                <P style="font-family: Georgia, 'Times New Roman', Times, serif;"><h2>&#x2728;Embark into the world of beauty&#x2728;</h2></P>
-                <P style="font-family: Georgia, 'Times New Roman', Times, serif;"&#129498; free to come and join the sparkle world you always dreamt of!&#129498;</P>
-                <a href="enquiry.html" class="cta-button">EMBARK HERE!</a>
+  <section class="beauty chevlier fade-in" id="heroSection">
+    <div class="images">
+      <img
+        src="images/make up hero.jpg"
+        alt="Mal's Beauty Stop chevlier"
+        style="width: 300px"
+      />
+    </div>
+    <div class="chevlier-text">
+      <h2 style="font-family: Georgia, 'Times New Roman', Times, serif;">
+        &#x2728;Embark into the world of beauty&#x2728;
+      </h2>
+      <p style="font-family: Georgia, 'Times New Roman', Times, serif;">
+        &#129498; Feel free to come and join the sparkle world you always dreamt of! &#129498;
+      </p>
+      <a href="enquiry.html" class="cta-button" id="embarkBtn" tabindex="0">EMBARK HERE!</a>
+    </div>
+  </section>
 
-            </div>
+  <main class="fade-in" id="mainContent" style="transition-delay: 0.3s;">
+    <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">
+      &#x2728;WHO WE ARE&#x2728;
+    </h3>
+    <p style="font-family: Georgia, 'Times New Roman', Times, serif;">
+      Mal's Beauty Stop is a beauty cafe for all the girlies that want to embark on the latest makeup trends.
+    </p>
+  </main>
 
-            </div>
-        </section>
-        <main>
-            <P style="font-family: Georgia, 'Times New Roman', Times, serif;"> <h3>&#x2728;WHO WE ARE&#x2728;</h3></P>
-            <P style="font-family: Georgia, 'Times New Roman', Times, serif;">Mal's Beauty Stop is a beauty cafe for all the girlies that want to embark on the latest makeup trends</p>
+  <br />
 
-        </main>
-        
-      
+  <footer>
+    <p>&copy; 2022 Mal's Beauty Stop, All Rights Reserved.</p>
+  </footer>
 
-        <br>
+  <div id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
-        <footer>
-            <p>&copy; 2022 Mal's Beauty Stop , All Rights Reserved.</p>
-        </footer>
-    </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const heroSection = document.getElementById("heroSection");
+      const mainContent = document.getElementById("mainContent");
+      heroSection.classList.add("visible");
+      mainContent.classList.add("visible");
+
+      function showToast(message, duration = 3000) {
+        const toast = document.getElementById("toast");
+        toast.textContent = message;
+        toast.classList.add("show");
+        setTimeout(() => {
+          toast.classList.remove("show");
+        }, duration);
+      }
+
+      const embarkButton = document.getElementById("embarkBtn");
+      embarkButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        showToast("Get ready to sparkle! ✨ Redirecting you to our Enquiry page.");
+        setTimeout(() => {
+          window.location.href = embarkButton.href;
+        }, 2000);
+      });
+
+      console.log("Welcome to Mal's Beauty Stop!");
+    });
+  </script>
+</body>
 </html>
