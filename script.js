@@ -6,6 +6,7 @@ document.querySelectorAll(".accordion-header").forEach(header => {
     });
 });
 
+
 document.querySelectorAll(".lightbox-img").forEach(img => {
     img.addEventListener("click", () => {
         const viewer = document.querySelector("#lightbox");
@@ -17,7 +18,6 @@ document.querySelectorAll(".lightbox-img").forEach(img => {
 document.querySelector("#lightbox").addEventListener("click", () => {
     document.querySelector("#lightbox").style.display = "none";
 });
-
 
 function validateForm(formId) {
     const form = document.getElementById(formId);
@@ -44,11 +44,7 @@ function validateForm(formId) {
 validateForm("contactForm");
 validateForm("enquiryForm");
 
-<script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("show");
-  }
-</script>
+
 
 
 
