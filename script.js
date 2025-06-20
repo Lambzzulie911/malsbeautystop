@@ -44,4 +44,11 @@ function validateForm(formId) {
 validateForm("contactForm");
 validateForm("enquiryForm");
 
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+</script>
+
+
 
