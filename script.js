@@ -1,8 +1,4 @@
-function toggleMenu() {
-    console.log("Toggle menu clicked");
-    const navbarLinks = document.getElementById("navbar-links");
-    navbarLinks.classList.toggle("active");
-}
+
 }
 document.querySelectorAll(".accordion-header").forEach(header => {
     header.addEventListener("click", () => {
