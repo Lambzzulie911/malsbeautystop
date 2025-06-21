@@ -29,6 +29,33 @@ body {
     font-family: Arial, sans-serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(232, 160, 229);
+    color: antiquewhite;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgb(182, 108, 163);
+    margin: 4px;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: #ecf0f1;
+    border-radius: 40px;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -37,28 +64,39 @@ body {
     padding: 10px 20px;
 }
 
-
-
 .navbar-links {
-    display: none;
+    display: none; 
+}
+
+.navbar-links.active {
+    display: flex; 
+    flex-direction: column; 
+    width: 100%;
+    background-color: #333; 
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
 }
 
 .navbar-links ul {
     list-style: none;
-    display: none;
+    padding: 0; /
 }
 
 .navbar-links ul li {
-    margin: 0 15px;
+    margin: 10px 0; 
 }
 
 .navbar-links ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 10px;
+    display: block; 
 }
 
 .toggle-button {
-    display: none;
+    display: flex;
     flex-direction: column;
     cursor: pointer;
 }
@@ -70,39 +108,26 @@ body {
     margin: 3px 0;
 }
 
-
-
-    .navbar-links ul {
-        flex-direction: column;
-        width: 100%;
-        background-color: #333;
-        position: absolute;
-        top: 60px;
-        left: 0;
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none; 
     }
-
-    .navbar-links ul li {
-        margin: 10px 0;
-        text-align: center;
-    }
-
     .toggle-button {
         display: flex;
     }
 }
-.navbar {
-    text-align: center;
-}
-.navbar ul{
-            display: flex;
-            list-style: none;
 
+@media (min-width: 769px) {
+    .navbar-links {
+        display: flex; 
+        flex-direction: row; 
+    }
+    .toggle-button {
+        display: none; 
+    }
 }
 
 
-.navbar li {
-    margin: 0 15px;
-}
 
 .navbar a {
     text-decoration: underline;
