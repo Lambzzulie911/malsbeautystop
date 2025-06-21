@@ -1,4 +1,7 @@
-
+function toggleMenu() {
+    const navbarLinks = document.getElementById("navbar-links");
+    navbarLinks.style.display = navbarLinks.style.display === "flex" ? "none" : "flex";
+}
 document.querySelectorAll(".accordion-header").forEach(header => {
     header.addEventListener("click", () => {
         const content = header.nextElementSibling;
