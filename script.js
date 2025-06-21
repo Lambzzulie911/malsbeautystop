@@ -1,6 +1,11 @@
 function toggleMenu() {
+    console.log("Toggle menu clicked");
     const navbarLinks = document.getElementById("navbar-links");
-    navbarLinks.style.display = navbarLinks.style.display === "flex" ? "none" : "flex";
+    if (navbarLinks.style.display === "flex") {
+        navbarLinks.style.display = "none";
+    } else {
+        navbarLinks.style.display = "flex";
+    }
 }
 document.querySelectorAll(".accordion-header").forEach(header => {
     header.addEventListener("click", () => {
