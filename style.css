@@ -40,12 +40,12 @@ body {
 
 
 .navbar-links {
-    display: flex;
+    display: none;
 }
 
 .navbar-links ul {
     list-style: none;
-    display: flex;
+    display: none;
 }
 
 .navbar-links ul li {
