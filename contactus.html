@@ -7,10 +7,7 @@
 <meta name="keywords" content="Beauty, Salon, Skincare, Haircare, Mal's Beauty Stop">
 <meta name="author" content="Mal's Beauty Stop">
 
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
 
     <title>Contact Us | MAL'S BEAUTY STOP</title>
     <link rel="stylesheet" href="style.css">
@@ -41,15 +38,16 @@
       box-sizing: border-box;
       font-family: inherit;
     }
-    form button {
+    form button, form input[type="submit"] {
       background-color: #cc3366;
       color: #eddfe4;
       font-weight: bold;
       border: none;
       cursor: pointer;
       transition: background 0.3s ease;
+      border-radius: 6px;
     }
-    form button:hover {
+    form button:hover, form input[type="submit"]:hover {
       background-color: #b32d5a;
     }
     .success-message {
@@ -58,24 +56,119 @@
       margin-top: 10px;
       font-weight: bold;
     }
-    </style>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: rgb(182, 108, 163);
+      margin: 4px;
+      position: relative;
+      z-index: 10;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    .logo-container img {
+      border-radius: 50%;
+      margin-bottom: 5px;
+    }
+    nav.navbar ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav.navbar ul li {
+      margin: 0 15px;
+    }
+    nav.navbar ul li a {
+      text-decoration: underline;
+      color: #ecf0f1;
+      font-size: 1rem;
+      padding: 6px;
+      display: block;
+      border-radius: 100px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav.navbar ul li a:hover {
+      color: #f1e9dc;
+      background-color: rgb(108, 43, 86);
+      text-decoration: none;
+    }
+    nav.navbar ul li a.active {
+      background-color: rgb(94, 22, 70);
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 30px;
+      height: 25px;
+      justify-content: space-between;
+    }
+    .hamburger div {
+      width: 30px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+    @media (max-width: 768px) {
+      nav.navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgb(182, 108, 163);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 0 0 10px 10px;
+      }
+      nav.navbar ul.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+</style>
 </head>
 <body>
 <header>
     <div class="logo-container">
         <img src="logo/new logo3.png" alt="logo" style="width: 150px;"><br>
-<h1 style="font-family: 'Brush Script MT', cursive;">MAL'S BEAUTY STOP</h1>
+        <h1 style="font-family: 'Brush Script MT', cursive;">MAL'S BEAUTY STOP</h1>
     </div>
 
     <nav class="navbar">
-        <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="aboutus.html">ABOUT US</a></li>
-            <li><a href="service.html">SERVICES</a></li>
-            <li><a href="enquiry.html">ENQUIRY</a></li>
-            <li><a class="active" href="contactus.html">CONTACT US</a></li>
+        <ul class="nav-menu">
+            <li><a class="nav-link" href="index.html">HOME</a></li>
+            <li><a class="nav-link" href="aboutus.html">ABOUT US</a></li>
+            <li><a class="nav-link" href="service.html">SERVICES</a></li>
+            <li><a class="nav-link" href="enquiry.html">ENQUIRY</a></li>
+            <li><a class="nav-link active" href="contactus.html">CONTACT US</a></li>
         </ul>
     </nav>
+
+    <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </header>
 
 <main>
@@ -85,7 +178,7 @@
     <p><strong>Phone:</strong> +27 12 345 6789</p>
     <p><strong>OR</strong></p>
     <p>WhatsApp Us HERE:
-        <a href="https://wa.me/27123456789" target="_blank">
+        <a href="https://wa.me/27123456789" target="_blank" rel="noopener noreferrer">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="50">
         </a>
     </p>
@@ -103,7 +196,7 @@
         <input type="submit" value="Submit">
     </form>
 </main>
-<p><strong>Address:</strong> 123 Style Lane, Fashion City, South Africa</p>
+<p style="max-width: 500px; margin: 20px auto;"><strong>Address:</strong> 123 Style Lane, Fashion City, South Africa</p>
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.2871379368526!2d90.412518!3d23.8072624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7a880a0c63d%3A0x3adf179b40f845cf!2sBoutique%20Store!5e0!3m2!1sen!2sbd!4v1610000000000" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
@@ -111,8 +204,22 @@
     <p>&copy; 2022 Mal's Beauty Stop, All Rights Reserved.</p>  
 </footer>
 
-
 <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-link").forEach(n =>
+        n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        })
+    );
+
     document.getElementById("contactForm").addEventListener("submit", function(event) {
         event.preventDefault();
 
@@ -132,3 +239,4 @@
 
 </body>
 </html>
+
