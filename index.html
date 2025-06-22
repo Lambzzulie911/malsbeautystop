@@ -187,6 +187,38 @@
     #showGalleryBtn:hover {
       background-color: #b30059;
     }
+    <head>
+  <style>
+    /* Your other styles... */
+
+    /* ✅ Add this at the end of your style tag */
+    .close-gallery-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      background: white;
+      color: #cc3366;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      padding: 8px 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 1000;
+      transition: 0.3s;
+    }
+
+    .close-gallery-btn:hover {
+      background-color: #cc3366;
+      color: white;
+    }
+
+    /* Make sure the gallery section allows positioning the button */
+    #gallery {
+      position: relative;
+    }
+  </style>
+</head>
     #gallery {
       display: none;
       padding: 50px 20px;
@@ -314,6 +346,7 @@
   <button id="showGalleryBtn">Click To View Our Gallery <i class="fa-solid fa-image"></i></button>
 
   <section id="gallery">
+    <button id="closeGalleryBtn" class="close-gallery-btn" title="Close Gallery">&times;</button>
     <h2><i class="fa-solid fa-image"></i> OUR GALLERY</h2>
     <div class="gallery-grid">
       <img src="services/haircuts.jpg" alt="Haircut service" />
