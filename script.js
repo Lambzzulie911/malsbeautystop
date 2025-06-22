@@ -44,9 +44,7 @@ document.addEventListener("keydown", (e) => {
     }
 });
 
-document.querySelector(".lightbox-close").addEventListener("click", () => {
-    document.querySelector("#lightbox").style.display = "none";
-});
+
 // Form Validation
 function validateForm(formId) {
     const form = document.getElementById(formId);
