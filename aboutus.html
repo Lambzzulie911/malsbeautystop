@@ -7,9 +7,7 @@
 <meta name="keywords" content="Beauty, Salon, Skincare, Haircare, Mal's Beauty Stop">
 <meta name="author" content="Mal's Beauty Stop">
 
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
   <title>About Us | MAL'S BEAUTY STOP</title>
   <link rel="stylesheet" href="style.css" />
@@ -60,6 +58,95 @@
       max-height: 150px;
       padding: 10px;
     }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: rgb(182, 108, 163);
+      margin: 4px;
+      position: relative;
+      z-index: 10;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    .logo-container img {
+      border-radius: 50%;
+      margin-bottom: 5px;
+    }
+    nav.navbar ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav.navbar ul li {
+      margin: 0 15px;
+    }
+    nav.navbar ul li a {
+      text-decoration: underline;
+      color: #ecf0f1;
+      font-size: 1rem;
+      padding: 6px;
+      display: block;
+      border-radius: 100px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav.navbar ul li a:hover {
+      color: #f1e9dc;
+      background-color: rgb(108, 43, 86);
+      text-decoration: none;
+    }
+    nav.navbar ul li a.active {
+      background-color: rgb(94, 22, 70);
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 30px;
+      height: 25px;
+      justify-content: space-between;
+    }
+    .hamburger div {
+      width: 30px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+    @media (max-width: 768px) {
+      nav.navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgb(182, 108, 163);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 0 0 10px 10px;
+      }
+      nav.navbar ul.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
@@ -69,14 +156,19 @@
       <h1 style="font-family: 'Brush Script MT', cursive;">MAL'S BEAUTY STOP</h1>
     </div>
     <nav class="navbar">
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a class="active" href="aboutus.html">ABOUT US</a></li>
-        <li><a href="service.html">SERVICES</a></li>
-        <li><a href="enquiry.html">ENQUIRY</a></li>
-        <li><a href="contactus.html">CONTACT US</a></li>
+      <ul class="nav-menu">
+        <li><a class="nav-link" href="index.html">HOME</a></li>
+        <li><a class="nav-link active" href="aboutus.html">ABOUT US</a></li>
+        <li><a class="nav-link" href="service.html">SERVICES</a></li>
+        <li><a class="nav-link" href="enquiry.html">ENQUIRY</a></li>
+        <li><a class="nav-link" href="contactus.html">CONTACT US</a></li>
       </ul>
     </nav>
+    <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </header>
 
   <main>
@@ -108,7 +200,7 @@
 
     <div tabindex="0" class="team members" aria-expanded="false" role="button" aria-controls="bio1" id="member1">
       <img src="team members/lambz.jpg" alt="Malamba Rewards Ramaano" />
-      <p><strong>Malamba Rewards Ramaano</strong><br />Founder & Director Of Mal's  <a href="#aboutus" class="tap-link">👉 Tap Here</a></p>
+      <p><strong>Malamba Rewards Ramaano</strong><br />Founder & Director Of Mal's</p>
       <div class="bio" id="bio1">
         Malamba founded Mal's Beauty Stop to inspire confidence and empower young women through beauty.
       </div>
@@ -116,37 +208,33 @@
 
     <div tabindex="0" class="team members" aria-expanded="false" role="button" aria-controls="bio2" id="member2">
       <img src="team members/lufuno.jpg" alt="Lufuno Marubini Ramasuvha" />
-      <p><strong>Lufuno Marubini Ramasuvha</strong><br />Manager & Marketer <a href="#aboutus" class="tap-link">👉 Tap Here</a></p>
+      <p><strong>Lufuno Marubini Ramasuvha</strong><br />Manager & Marketer</p>
       <div class="bio" id="bio2">
         Lufuno manages marketing campaigns and builds brand awareness across South Africa.
-       
       </div>
     </div>
 
     <div tabindex="0" class="team members" aria-expanded="false" role="button" aria-controls="bio3" id="member3">
       <img src="team members/ouma.jpg" alt="Ouma Priscilla Tlou" />
-      <p><strong>Ouma Priscilla Tlou</strong><br />Our Special Artist <a href="#aboutus" class="tap-link">👉 Tap Here</a></p>
+      <p><strong>Ouma Priscilla Tlou</strong><br />Our Special Artist</p>
       <div class="bio" id="bio3">
         Ouma creates stunning artistic makeup looks that empower confidence.
-       
       </div>
     </div>
 
     <div tabindex="0" class="team members" aria-expanded="false" role="button" aria-controls="bio4" id="member4">
       <img src="team members/Tshavhu.jpg" alt="Tshavhungwe Rinae Balaphala" />
-      <p><strong>Tshavhungwe Rinae Balaphala</strong><br />Our Special Artist <a href="#aboutus" class="tap-link">👉 Tap Here</a></p>
+      <p><strong>Tshavhungwe Rinae Balaphala</strong><br />Our Special Artist</p>
       <div class="bio" id="bio4">
         Tshavhungwe specializes in editorial and bridal makeup.
-        
       </div>
     </div>
 
     <div tabindex="0" class="team members" aria-expanded="false" role="button" aria-controls="bio5" id="member5">
       <img src="team members/mpho.jpg" alt="Mpho Dombo" />
-      <p><strong>Mpho Dombo</strong><br />Our Model <a href="#aboutus" class="tap-link">👉 Tap Here</a></p>
+      <p><strong>Mpho Dombo</strong><br />Our Model</p>
       <div class="bio" id="bio5">
         Mpho is the face of Mal’s Beauty Stop in campaigns and runway shows.
-
       </div>
     </div>
   </main>
@@ -156,18 +244,20 @@
   </footer>
 
   <script>
-    (() => {
-      const DEBUG = false;
-    
-      function debounce(func, wait) {
-        let timeout;
-        return function () {
-          clearTimeout(timeout);
-          timeout = setTimeout(() => func.apply(this, arguments), wait);
-        };
-      }
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
 
-     
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }));
+
+    (() => {
       const teamMembers = document.querySelectorAll('.team');
       teamMembers.forEach((member, i) => {
         setTimeout(() => {
@@ -176,7 +266,6 @@
         }, i * 150);
       });
 
-     
       teamMembers.forEach(member => {
         const bioId = member.getAttribute('aria-controls');
         const bio = document.getElementById(bioId);
@@ -201,18 +290,7 @@
           }
         });
       });
-
-      
-      window.addEventListener(
-        'resize',
-        debounce(() => {
-          if (DEBUG) console.log('Window resized:', window.innerWidth, window.innerHeight);
-        }, 300)
-      );
-
-      if (DEBUG) console.log("Mal's Beauty Stop About Us page loaded.");
     })();
   </script>
 </body>
 </html>
-
