@@ -115,6 +115,29 @@
       transform: scale(1.03);
       box-shadow: 0 6px 18px rgba(204, 51, 102, 0.25);
     }
+
+    .close-gallery-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  background: white;
+  color: #cc3366;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 8px 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: 0.3s;
+}
+.close-gallery-btn:hover {
+  background-color: #cc3366;
+  color: white;
+}
+#gallery {
+  position: relative;
+}
     .lightbox {
       display: none;
       position: fixed;
@@ -293,6 +316,7 @@
     <h2>&#x2728;WHAT WE OFFER&#x2728;</h2>
     <button id="showGalleryBtn">Click To View Our Gallery <i class="fa-solid fa-image"></i></button>
     <section id="gallery">
+      <button id="closeGalleryBtn" class="close-gallery-btn" title="Close Gallery">&times;</button>
       <h2><i class="fa-solid fa-image"></i> OUR GALLERY</h2>
       <div class="gallery-grid">
        <img src="services/haircuts.jpg" alt="Haircut service" />
@@ -422,6 +446,19 @@
         }
       });
     });
+
+    const closeGalleryBtn = document.getElementById("closeGalleryBtn");
+const gallerySection = document.getElementById("gallery");
+const showGalleryBtn = document.getElementById("showGalleryBtn"); // Optional
+
+if (closeGalleryBtn) {
+  closeGalleryBtn.addEventListener("click", () => {
+    gallerySection.style.display = "none";
+    if (showGalleryBtn) {
+      showGalleryBtn.style.display = "block"; // Re-show the “Click to view” button
+    }
+  });
+}
   </script>
 </body>
 </html>
