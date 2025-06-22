@@ -396,5 +396,96 @@
   </footer>
 
   <div id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
+   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      navLinks.forEach(n => n.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+      }));
+
+      const serviceItems = document.querySelectorAll("#services li");
+      serviceItems.forEach((item, index) => {
+        setTimeout(() => item.classList.add("visible"), index * 120);
+        item.addEventListener("click", () => {
+          item.querySelector(".more-info").classList.toggle("open");
+        });
+        item.addEventListener("keydown", e => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            item.querySelector(".more-info").classList.toggle("open");
+          }
+        });
+      });
+
+      const showGalleryBtn = document.getElementById("showGalleryBtn");
+      const gallerySection = document.getElementById("gallery");
+
+      showGalleryBtn.addEventListener("click", () => {
+        gallerySection.style.display = "block";
+        showGalleryBtn.style.display = "none";
+        window.scrollTo({
+          top: gallerySection.offsetTop,
+          behavior: 'smooth'
+        });
+      });
+
+      const galleryImages = document.querySelectorAll(".gallery-grid img");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.querySelector(".lightbox-img");
+      const caption = document.querySelector(".lightbox-caption");
+      const closeBtn = document.querySelector(".close-btn");
+
+      galleryImages.forEach(img => {
+        img.addEventListener("click", () => {
+          lightbox.style.display = "flex";
+          lightboxImg.src = img.src;
+          caption.textContent = img.alt;
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+        lightboxImg.src = "";
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.style.display = "none";
+          lightboxImg.src = "";
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          lightbox.style.display = "none";
+          lightboxImg.src = "";
+        }
+      });
+    });
+
+    const closeGalleryBtn = document.getElementById("closeGalleryBtn");
+const gallerySection = document.getElementById("gallery");
+const showGalleryBtn = document.getElementById("showGalleryBtn"); 
+
+if (closeGalleryBtn) {
+  closeGalleryBtn.addEventListener("click", () => {
+    gallerySection.style.display = "none";
+    if (showGalleryBtn) {
+      showGalleryBtn.style.display = "block"; 
+    }
+  });
+}
+  </script>
+</body>
+</html>
 
   
