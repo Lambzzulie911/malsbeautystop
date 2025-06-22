@@ -2,15 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
- 
+
 <meta name="description" content="Explore Mal's Beauty Stop – premium beauty services and products. Book appointments, contact us, or make an enquiry today.">
 <meta name="keywords" content="Beauty, Salon, Skincare, Haircare, Mal's Beauty Stop">
 <meta name="author" content="Mal's Beauty Stop">
 
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
 
   <title>Enquiry | MAL'S BEAUTY STOP</title>
   <link rel="stylesheet" href="style.css">
@@ -58,6 +55,95 @@
       margin-top: 10px;
       font-weight: bold;
     }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: rgb(182, 108, 163);
+      margin: 4px;
+      position: relative;
+      z-index: 10;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    .logo-container img {
+      border-radius: 50%;
+      margin-bottom: 5px;
+    }
+    nav.navbar ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav.navbar ul li {
+      margin: 0 15px;
+    }
+    nav.navbar ul li a {
+      text-decoration: underline;
+      color: #ecf0f1;
+      font-size: 1rem;
+      padding: 6px;
+      display: block;
+      border-radius: 100px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav.navbar ul li a:hover {
+      color: #f1e9dc;
+      background-color: rgb(108, 43, 86);
+      text-decoration: none;
+    }
+    nav.navbar ul li a.active {
+      background-color: rgb(94, 22, 70);
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 30px;
+      height: 25px;
+      justify-content: space-between;
+    }
+    .hamburger div {
+      width: 30px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+    @media (max-width: 768px) {
+      nav.navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgb(182, 108, 163);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 0 0 10px 10px;
+      }
+      nav.navbar ul.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
@@ -65,17 +151,22 @@
 <header>
   <div class="logo-container">
     <img src="logo/new logo3.png" alt="logo" style="width: 150px;"><br>
-  <h1 style="font-family: 'Brush Script MT', cursive;">MAL'S BEAUTY STOP</h1>
+    <h1 style="font-family: 'Brush Script MT', cursive;">MAL'S BEAUTY STOP</h1>
   </div>
   <nav class="navbar">
-    <ul>
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="aboutus.html">ABOUT US</a></li>
-      <li><a href="service.html">SERVICES</a></li>
-      <li><a class="active" href="enquiry.html">ENQUIRY</a></li>
-      <li><a href="contactus.html">CONTACT US</a></li>
+    <ul class="nav-menu">
+      <li><a class="nav-link" href="index.html">HOME</a></li>
+      <li><a class="nav-link" href="aboutus.html">ABOUT US</a></li>
+      <li><a class="nav-link" href="service.html">SERVICES</a></li>
+      <li><a class="nav-link active" href="enquiry.html">ENQUIRY</a></li>
+      <li><a class="nav-link" href="contactus.html">CONTACT US</a></li>
     </ul>
   </nav>
+  <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 </header>
 
 <main>
@@ -118,6 +209,19 @@
 </footer>
 
 <script>
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+
+  hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", ()=> { 
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  }));
+
   document.getElementById("enquiryForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -134,7 +238,6 @@
       return;
     }
 
-    
     const telPattern = /^[0-9+\-\s]{7,}$/;
     if (!telPattern.test(tel)) {
       alert("📞 Please enter a valid contact number.");
@@ -145,7 +248,6 @@
 
     this.reset();
 
-  
     setTimeout(() => {
       successMsg.textContent = "";
     }, 5000);
