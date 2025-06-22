@@ -449,13 +449,13 @@
 
     const closeGalleryBtn = document.getElementById("closeGalleryBtn");
 const gallerySection = document.getElementById("gallery");
-const showGalleryBtn = document.getElementById("showGalleryBtn"); // Optional
+const showGalleryBtn = document.getElementById("showGalleryBtn"); 
 
 if (closeGalleryBtn) {
   closeGalleryBtn.addEventListener("click", () => {
     gallerySection.style.display = "none";
     if (showGalleryBtn) {
-      showGalleryBtn.style.display = "block"; // Re-show the “Click to view” button
+      showGalleryBtn.style.display = "block"; 
     }
   });
 }
