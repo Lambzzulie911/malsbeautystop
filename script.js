@@ -1,5 +1,4 @@
-
-}
+// Accordion
 document.querySelectorAll(".accordion-header").forEach(header => {
     header.addEventListener("click", () => {
         const content = header.nextElementSibling;
@@ -7,7 +6,7 @@ document.querySelectorAll(".accordion-header").forEach(header => {
     });
 });
 
-
+// Lightbox for gallery
 document.querySelectorAll(".lightbox-img").forEach(img => {
     img.addEventListener("click", () => {
         const viewer = document.querySelector("#lightbox");
@@ -20,6 +19,7 @@ document.querySelector("#lightbox").addEventListener("click", () => {
     document.querySelector("#lightbox").style.display = "none";
 });
 
+// Form Validation
 function validateForm(formId) {
     const form = document.getElementById(formId);
     form.addEventListener("submit", function (e) {
@@ -44,6 +44,8 @@ function validateForm(formId) {
 
 validateForm("contactForm");
 validateForm("enquiryForm");
+
+
 
 
 
