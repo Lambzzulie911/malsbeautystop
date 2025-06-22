@@ -396,34 +396,45 @@
   </footer>
 
   <div id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
-   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const hamburger = document.querySelector(".hamburger");
-      const navMenu = document.querySelector(".nav-menu");
-      const navLinks = document.querySelectorAll(".nav-link");
 
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-      });
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
 
-      navLinks.forEach(n => n.addEventListener("click", () => {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-link").forEach(n =>
+      n.addEventListener("click", () => {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
-      }));
+      })
+    );
 
-      const serviceItems = document.querySelectorAll("#services li");
-      serviceItems.forEach((item, index) => {
-        setTimeout(() => item.classList.add("visible"), index * 120);
-        item.addEventListener("click", () => {
-          item.querySelector(".more-info").classList.toggle("open");
-        });
-        item.addEventListener("keydown", e => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            item.querySelector(".more-info").classList.toggle("open");
-          }
-        });
+    document.addEventListener("DOMContentLoaded", () => {
+      const heroSection = document.getElementById("heroSection");
+      const mainContent = document.getElementById("mainContent");
+      heroSection.classList.add("visible");
+      mainContent.classList.add("visible");
+
+      function showToast(message, duration = 3000) {
+        const toast = document.getElementById("toast");
+        toast.textContent = message;
+        toast.classList.add("show");
+        setTimeout(() => {
+          toast.classList.remove("show");
+        }, duration);
+      }
+
+      const embarkButton = document.getElementById("embarkBtn");
+      embarkButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        showToast("Get ready to sparkle! ✨ Redirecting you to our Enquiry page.");
+        setTimeout(() => {
+          window.location.href = embarkButton.href;
+        }, 2000);
       });
 
       const showGalleryBtn = document.getElementById("showGalleryBtn");
@@ -449,43 +460,32 @@
           lightbox.style.display = "flex";
           lightboxImg.src = img.src;
           caption.textContent = img.alt;
+          document.body.style.overflow = "hidden";
         });
       });
 
       closeBtn.addEventListener("click", () => {
         lightbox.style.display = "none";
         lightboxImg.src = "";
+        document.body.style.overflow = "";
       });
 
       lightbox.addEventListener("click", (e) => {
         if (e.target === lightbox) {
           lightbox.style.display = "none";
           lightboxImg.src = "";
+          document.body.style.overflow = "";
         }
       });
 
       document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
+        if (e.key === "Escape" && lightbox.style.display === "flex") {
           lightbox.style.display = "none";
           lightboxImg.src = "";
+          document.body.style.overflow = "";
         }
       });
     });
-
-    const closeGalleryBtn = document.getElementById("closeGalleryBtn");
-const gallerySection = document.getElementById("gallery");
-const showGalleryBtn = document.getElementById("showGalleryBtn"); 
-
-if (closeGalleryBtn) {
-  closeGalleryBtn.addEventListener("click", () => {
-    gallerySection.style.display = "none";
-    if (showGalleryBtn) {
-      showGalleryBtn.style.display = "block"; 
-    }
-  });
-}
   </script>
 </body>
 </html>
-
-  
