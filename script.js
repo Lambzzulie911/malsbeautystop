@@ -6,17 +6,42 @@ document.querySelectorAll(".accordion-header").forEach(header => {
     });
 });
 
-// Lightbox for gallery
-document.querySelectorAll(".lightbox-img").forEach(img => {
+// Lightbox for gallery with toggle behavior
+const galleryImages = document.querySelectorAll(".lightbox-img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = lightbox.querySelector("img");
+const caption = lightbox.querySelector(".lightbox-caption");
+let currentImageSrc = "";
+
+galleryImages.forEach(img => {
     img.addEventListener("click", () => {
-        const viewer = document.querySelector("#lightbox");
-        viewer.querySelector("img").src = img.src;
-        viewer.style.display = "block";
+        if (lightbox.style.display === "flex" && lightboxImg.src === img.src) {
+            lightbox.style.display = "none";
+            lightboxImg.src = "";
+            currentImageSrc = "";
+        } else {
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
+            if (caption) caption.textContent = img.alt;
+            currentImageSrc = img.src;
+        }
     });
 });
 
-document.querySelector("#lightbox").addEventListener("click", () => {
-    document.querySelector("#lightbox").style.display = "none";
+lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = "none";
+        lightboxImg.src = "";
+        currentImageSrc = "";
+    }
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        lightbox.style.display = "none";
+        lightboxImg.src = "";
+        currentImageSrc = "";
+    }
 });
 
 // Form Validation
