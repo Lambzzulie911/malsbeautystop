@@ -7,10 +7,7 @@
 <meta name="keywords" content="Beauty, Salon, Skincare, Haircare, Mal's Beauty Stop">
 <meta name="author" content="Mal's Beauty Stop">
 
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
 
   <title>Home | MAL'S BEAUTY STOP</title>
   <link rel="stylesheet" href="style.css" />
@@ -22,7 +19,6 @@
       text-align: left;
     }
 
-  
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -33,7 +29,6 @@
       transform: translateY(0);
     }
 
-   
     #embarkBtn {
       transition: transform 0.3s ease;
       background-color: #ff69b4;
@@ -47,12 +42,12 @@
       text-decoration: none;
       display: inline-block;
       text-align: center;
+      cursor: pointer;
     }
     #embarkBtn:hover,
     #embarkBtn:focus {
       animation: pulse 1.5s infinite;
       outline: none;
-      cursor: pointer;
     }
     @keyframes pulse {
       0%, 100% {
@@ -65,7 +60,6 @@
       }
     }
 
- 
     #toast {
       position: fixed;
       bottom: 20px;
@@ -86,7 +80,191 @@
       opacity: 1;
       pointer-events: auto;
     }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: rgb(182, 108, 163);
+      margin: 4px;
+      position: relative;
+      z-index: 10;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    .logo-container img {
+      border-radius: 50%;
+      margin-bottom: 5px;
+    }
+    nav.navbar ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav.navbar ul li {
+      margin: 0 15px;
+    }
+    nav.navbar ul li a {
+      text-decoration: underline;
+      color: #ecf0f1;
+      font-size: 1rem;
+      padding: 6px;
+      display: block;
+      border-radius: 100px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
+    }
+    nav.navbar ul li a:hover {
+      color: #f1e9dc;
+      background-color: rgb(108, 43, 86);
+      text-decoration: none;
+    }
+    nav.navbar ul li a.active {
+      background-color: rgb(94, 22, 70);
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 30px;
+      height: 25px;
+      justify-content: space-between;
+    }
+    .hamburger div {
+      width: 30px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+    @media (max-width: 768px) {
+      nav.navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgb(182, 108, 163);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 0 0 10px 10px;
+      }
+      nav.navbar ul.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    #showGalleryBtn {
+      display: block;
+      margin: 20px auto 60px auto;
+      padding: 12px 24px;
+      background-color: #cc3366;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    #showGalleryBtn:hover {
+      background-color: #b30059;
+    }
+    #gallery {
+      display: none;
+      padding: 50px 20px;
+      text-align: center;
+      background: #fff8fb;
+    }
+    #gallery h2 {
+      font-size: 2.2rem;
+      color: #cc3366;
+      margin-bottom: 35px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 18px rgba(204, 51, 102, 0.25);
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(6px);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .lightbox-content {
+      position: relative;
+      text-align: center;
+      max-width: 90%;
+      max-height: 85%;
+    }
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    .lightbox-caption {
+      color: #fff;
+      margin-top: 10px;
+      font-size: 1rem;
+      font-style: italic;
+    }
+    .close-btn {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      background: #fff;
+      color: #cc3366;
+      font-size: 1.8rem;
+      padding: 6px 12px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .close-btn:hover {
+      background: #cc3366;
+      color: #fff;
+    }
   </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
@@ -96,14 +274,20 @@
     </div>
 
     <nav class="navbar">
-      <ul>
-        <li><a class="active" href="index.html">HOME</a></li>
-        <li><a href="aboutus.html">ABOUT US</a></li>
-        <li><a href="service.html">SERVICES</a></li>
-        <li><a href="enquiry.html">ENQUIRY</a></li>
-        <li><a href="contactus.html">CONTACT US</a></li>
+      <ul class="nav-menu">
+        <li><a class="nav-link active" href="index.html">HOME</a></li>
+        <li><a class="nav-link" href="aboutus.html">ABOUT US</a></li>
+        <li><a class="nav-link" href="service.html">SERVICES</a></li>
+        <li><a class="nav-link" href="enquiry.html">ENQUIRY</a></li>
+        <li><a class="nav-link" href="contactus.html">CONTACT US</a></li>
       </ul>
     </nav>
+
+    <div class="hamburger" aria-label="Toggle navigation" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </header>
 
   <section class="beauty chevlier fade-in" id="heroSection">
@@ -125,6 +309,34 @@
     </div>
   </section>
 
+  <button id="showGalleryBtn">View Our Gallery <i class="fa-solid fa-image"></i></button>
+
+  <section id="gallery">
+    <h2><i class="fa-solid fa-image"></i> OUR GALLERY</h2>
+    <div class="gallery-grid">
+      <img src="services/haircuts.jpg" alt="Haircut service" />
+      <img src="services/our nail technician.jpg" alt="Nail care session" />
+      <img src="services/facial.jpg" alt="Makeup artist in action" />
+      <img src="services/barber.jpg" alt="Spa facial treatment" />
+      <img src="services/flawlessnails (2).jpg" alt="Hair styling with care" />
+      <img src="services/flawlessnails (4).jpg" alt="Professional waxing room" />
+      <img src="services/thesoldsalonappli.jpg" alt="Haircut service" />
+      <img src="services/spatreatment.jpg" alt="Nail care session" />
+      <img src="services/spatreatment (2).jpg" alt="Makeup artist in action" />
+      <img src="services/some of our work.jpg" alt="Spa facial treatment" />
+      <img src="services/ourspaasthetics.jpg" alt="Hair styling with care" />
+      <img src="services/ourskinfriendlyproducts.jpg" alt="Professional waxing room" />
+    </div>
+  </section>
+
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <span class="close-btn" title="Close">&times;</span>
+      <img class="lightbox-img" src="" alt="Preview" />
+      <p class="lightbox-caption"></p>
+    </div>
+  </div>
+
   <main class="fade-in" id="mainContent" style="transition-delay: 0.3s;">
     <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">
       &#x2728;WHO WE ARE&#x2728;
@@ -143,6 +355,21 @@
   <div id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
 
   <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-link").forEach(n =>
+      n.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+      })
+    );
+
     document.addEventListener("DOMContentLoaded", () => {
       const heroSection = document.getElementById("heroSection");
       const mainContent = document.getElementById("mainContent");
@@ -167,8 +394,56 @@
         }, 2000);
       });
 
-      console.log("Welcome to Mal's Beauty Stop!");
+      const showGalleryBtn = document.getElementById("showGalleryBtn");
+      const gallerySection = document.getElementById("gallery");
+
+      showGalleryBtn.addEventListener("click", () => {
+        gallerySection.style.display = "block";
+        showGalleryBtn.style.display = "none";
+        window.scrollTo({
+          top: gallerySection.offsetTop,
+          behavior: 'smooth'
+        });
+      });
+
+      const galleryImages = document.querySelectorAll(".gallery-grid img");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.querySelector(".lightbox-img");
+      const caption = document.querySelector(".lightbox-caption");
+      const closeBtn = document.querySelector(".close-btn");
+
+      galleryImages.forEach(img => {
+        img.addEventListener("click", () => {
+          lightbox.style.display = "flex";
+          lightboxImg.src = img.src;
+          caption.textContent = img.alt;
+          document.body.style.overflow = "hidden";
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+        lightboxImg.src = "";
+        document.body.style.overflow = "";
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.style.display = "none";
+          lightboxImg.src = "";
+          document.body.style.overflow = "";
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lightbox.style.display === "flex") {
+          lightbox.style.display = "none";
+          lightboxImg.src = "";
+          document.body.style.overflow = "";
+        }
+      });
     });
   </script>
 </body>
 </html>
+
