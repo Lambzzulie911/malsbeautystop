@@ -43,7 +43,14 @@ document.addEventListener("keydown", (e) => {
         currentImageSrc = "";
     }
 });
+const closeGalleryBtn = document.getElementById("closeGalleryBtn");
+const gallerySection = document.getElementById("gallery");
 
+closeGalleryBtn.addEventListener("click", () => {
+  gallerySection.style.display = "none";
+  document.getElementById("showGalleryBtn").style.display = "block"; // Optionally show button again
+});
+document.getElementById("showGalleryBtn").style.display = "block";
 
 // Form Validation
 function validateForm(formId) {
